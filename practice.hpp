@@ -149,27 +149,6 @@ public:
         //std::cout << "check : " << bc_[next_node].check << std::endl;
         return next_node != kFailedIndex;
     }
-    //test4用
-    bool contains2(const std::string& key) const {//bool型は　0　か　1　の情報しか持たない 
-        int node = 0; // root  
-        /*                  //0は偽false 1は真true　 
-        for (uint8_t c : key) {
-            int next_node = bc_[node].base + c;//^ でxorに変更
-            //std::cout << key <<"\n";
-            //std::cout << c <<"\n";
-            //std::cout << next_node <<"\n";
-            if (bc_[next_node].check != node) {//探索失敗
-                return false;//tester.hppのbool testのなかで探索失敗に入る
-            }
-            node = next_node;
-        }
-        // '\0'
-        */
-        int next_node = bc_[node].base + kLeafChar;
-        std::cout << "aaaaaaaaa";
-        
-        return bc_[next_node].check == node;
-    }
 private:
     int find_base(const std::unordered_map<uint8_t, int>& row) const {
         for (int base = 0; true; ++base) {
